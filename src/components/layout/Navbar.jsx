@@ -18,12 +18,26 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
      const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
      const pathname = usePathname();
+     const isActive = (href) => pathname === href;
 
-    useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+useEffect(() => {
+  if (pathname !== "/") {
+    setIsScrolled(true);
+    return;
+  }
+
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 10);
+  };
+
+  handleScroll(); 
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, [pathname]);
 
 
   return (
@@ -49,7 +63,7 @@ const Navbar = () => {
               href="/" 
               className={cn("font-serif tracking-widest uppercase text-xl font-medium" , isScrolled ? "text-stone-900" : "text-white z-50 relative")}
             >
-              Nordic
+              NØRDIC
             </Link>
 
             {/* Desktop Nav */}
@@ -60,10 +74,11 @@ const Navbar = () => {
                   href={link.href}
                   className={cn(
                     "text-sm uppercase tracking-wider font-medium transition-colors relative",
-                    pathname.startsWith(link.href) ? "text-stone-900" : isScrolled ? "text-stone-900 hover:text-stone-500" : "text-white hover:text-stone-300"
+                    isActive(link.href) ? "text-stone-900" : isScrolled ? "text-stone-900 hover:text-stone-500" : "text-white hover:text-stone-300"
                   )}
                 >
                   {link.name}
+                  
                 </Link>
               ))}
             </nav>
@@ -80,7 +95,7 @@ const Navbar = () => {
                 <span className="sr-only">Wishlist</span>
               </Link>
 
-              <Link href="/cart" className={cn(" transition-colors hidden sm:block", isScrolled ? "text-stone-900 hover:text-stone-500" : "text-white hover:text-stone-300")}>
+              <Link href="/cart" className={cn(" transition-colors ", isScrolled ? "text-stone-900 hover:text-stone-500" : "text-white hover:text-stone-300")}>
                 <ShoppingBag className="w-5 h-5" />
                 <span className="sr-only">Cart</span>
               </Link>
@@ -102,8 +117,8 @@ const Navbar = () => {
         </button>
         
         <div className="flex flex-col gap-8">
-          <Link href="/" className="font-serif tracking-widest text-3xl text-gray-200 pb-8 border-b border-stone-200">
-            NORDIC LIVING
+          <Link href="/" className="font-serif tracking-widest text-3xl text-gray-700 pb-8 border-b border-stone-200">
+            NORDIC 
           </Link>
           <nav className="flex flex-col gap-6">
             {navLinks.map((link) => (
