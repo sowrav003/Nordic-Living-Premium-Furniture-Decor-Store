@@ -47,7 +47,7 @@ const Navbar = () => {
             {/* Logo */}
             <Link 
               href="/" 
-              className="font-serif tracking-widest uppercase text-xl font-medium text-stone-900 z-50 relative"
+              className={cn("font-serif tracking-widest uppercase text-xl font-medium" , isScrolled ? "text-stone-900" : "text-white z-50 relative")}
             >
               Nordic
             </Link>
@@ -59,8 +59,8 @@ const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "text-sm uppercase tracking-wider font-medium transition-colors hover:text-stone-900",
-                    pathname.startsWith(link.href) ? "text-stone-900" : "text-stone-500"
+                    "text-sm uppercase tracking-wider font-medium transition-colors relative",
+                    pathname.startsWith(link.href) ? "text-stone-900" : isScrolled ? "text-stone-900 hover:text-stone-500" : "text-white hover:text-stone-300"
                   )}
                 >
                   {link.name}
@@ -70,17 +70,20 @@ const Navbar = () => {
 
             {/* Actions */}
             <div className="flex items-center gap-5">
-              <button className="text-stone-900 hover:text-stone-500 transition-colors hidden sm:block">
+              <button className={cn(" transition-colors hidden sm:block", isScrolled ? "text-stone-900 hover:text-stone-500"  : "text-white hover:text-stone-300")}>
                 <Search className="w-5 h-5" />
                 <span className="sr-only">Search</span>
               </button>
               
-              <Link href="/wishlist" className="text-stone-900 hover:text-stone-500 transition-colors hidden sm:block">
+              <Link href="/wishlist" className={cn(" transition-colors hidden sm:block", isScrolled ? "text-stone-900 hover:text-stone-500" : "text-white hover:text-stone-300")}>
                 <Heart className="w-5 h-5" />
                 <span className="sr-only">Wishlist</span>
               </Link>
 
-              <ShoppingBag className="w-5 h-5" />
+              <Link href="/cart" className={cn(" transition-colors hidden sm:block", isScrolled ? "text-stone-900 hover:text-stone-500" : "text-white hover:text-stone-300")}>
+                <ShoppingBag className="w-5 h-5" />
+                <span className="sr-only">Cart</span>
+              </Link>
             </div>
           </div>
         </div>
