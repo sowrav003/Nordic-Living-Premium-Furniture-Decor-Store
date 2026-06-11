@@ -73,12 +73,12 @@ useEffect(() => {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "text-sm uppercase tracking-wider font-medium transition-colors relative",
+                    "text-sm uppercase tracking-wider font-medium transition-colors relative group",
                     isActive(link.href) ? "text-stone-900" : isScrolled ? "text-stone-900 hover:text-stone-500" : "text-white hover:text-stone-300"
                   )}
                 >
                   {link.name}
-                  
+                  <span className={cn("absolute -bottom-1 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full" , isScrolled ? "bg-stone-900" : "bg-white")}></span>
                 </Link>
               ))}
             </nav>
