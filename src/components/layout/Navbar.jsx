@@ -9,9 +9,8 @@ import React, { useEffect, useState } from 'react'
 const Navbar = () => {
     const navLinks = [
     { name: 'Products', href: '/products' },
-    { name: 'Sofas', href: '/categories/sofas' },
-    { name: 'Chairs', href: '/categories/chairs' },
-    { name: 'Tables', href: '/categories/tables' },
+    { name: 'Categories', href: '/categories' },
+    { name: 'Blog', href: '/blog' },
     { name: 'About', href: '/about' },
   ];
 

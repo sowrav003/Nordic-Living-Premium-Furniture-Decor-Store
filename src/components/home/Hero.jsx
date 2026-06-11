@@ -1,15 +1,14 @@
 "use client";
 
 import React from "react";
-import { Button } from "../ui/button";
 import Image from "next/image";
 import { assets } from "@/lib/data";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+
 
 const Hero = () => {
   return (
-    <div>
+    <>
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <Image
@@ -52,7 +51,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

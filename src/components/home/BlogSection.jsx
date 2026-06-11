@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import Title from './Title'
 
 const BlogSection = () => {
    const blogs = [
@@ -8,12 +9,9 @@ const BlogSection = () => {
              { title: "Kitchen Inspired On Japanese", category: "Cooking", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" }
            ]
   return (
-     <section className="w-full mx-auto px-6 py-24 mb-12">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">From Our Blog</h2>
-          <p className="text-sm text-gray-500">See how our customers have styled davici products in their home</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <section className="w-full py-14 px-8 md:px-32 bg-gray-100">
+      <Title title="From Our Blog" subTitle="Our latest thoughts and stories" align="center" />
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
            {blogs.map((blog, idx) => (
              <div key={idx} className="group cursor-pointer">
                <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden mb-6 rounded-sm">

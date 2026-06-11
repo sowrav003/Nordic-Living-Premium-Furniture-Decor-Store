@@ -26,11 +26,7 @@ const ProductsCard = ({ product }) => {
             </span>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-          <button className="w-full bg-stone-900 text-white py-3 text-sm">
-            Quick View
-          </button>
-        </div>
+        
       </Link>
       <div className=" flex items-center justify-between py-3">
         <h3 className="text-lg font-medium mt-4">{product.name}</h3>

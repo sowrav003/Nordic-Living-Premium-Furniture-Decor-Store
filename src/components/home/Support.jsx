@@ -21,16 +21,16 @@ const Support = () => {
     },
   ];
   return (
-    <section className=" border border-gray-100 py-16 bg-white">
+    <section className="my-8 py-8 bg-white">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
 
         {supports.map((support, idx) => (
-          <div key={idx} className="flex flex-col items-center gap-3 font-mono">
+          <div key={idx} className="flex flex-col items-center gap-3 font-serif">
             <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-black">
               <support.icon size={24} />
             </div>
             <h3 className="text-sm font-medium">{support.title}</h3>
-            <p className="text-xs text-gray-500">{support.desc}</p>
+            <p className="text-sm text-gray-500">{support.desc}</p>
           </div>
         ))}
       </div>

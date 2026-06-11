@@ -64,7 +64,12 @@ export const assets = {
     products28
 }
 
-
+export const categories = [
+  { id: "1", name: "Sofas", slug: "sofas" },
+  { id: "2", name: "Chairs", slug: "chairs" },
+  { id: "3", name: "Tables", slug: "tables" },
+  { id: "4", name: "Storage", slug: "storage" }
+];
 
 
 
