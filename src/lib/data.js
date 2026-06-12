@@ -30,6 +30,7 @@ import products27 from "@/assets/products27.jpg";
 import products28 from "@/assets/products28.jpg";
 import aboutImg from "@/assets/about.jpg";
 import aboutImg2 from "@/assets/aboutImg2.jpg";
+import contactImg from "@/assets/contact.jpg";
 
 
 
@@ -66,6 +67,7 @@ export const assets = {
     products28,
     aboutImg,
     aboutImg2,
+    contactImg
 }
 
 export const categories = [
