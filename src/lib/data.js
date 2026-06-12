@@ -28,6 +28,8 @@ import products25 from "@/assets/products25.jpg";
 import products26 from "@/assets/products26.jpg";
 import products27 from "@/assets/products27.jpg";
 import products28 from "@/assets/products28.jpg";
+import aboutImg from "@/assets/about.jpg";
+import aboutImg2 from "@/assets/aboutImg2.jpg";
 
 
 
@@ -61,17 +63,28 @@ export const assets = {
     products25,
     products26,
     products27,
-    products28
+    products28,
+    aboutImg,
+    aboutImg2,
 }
 
 export const categories = [
   { id: "1", name: "Sofas", slug: "sofas" },
   { id: "2", name: "Chairs", slug: "chairs" },
   { id: "3", name: "Tables", slug: "tables" },
-  { id: "4", name: "Storage", slug: "storage" }
+  { id: "4", name: "Storage", slug: "storage" },
+  { id: "5", name: "Bedroom", slug: "bedroom" },
+  { id: "6", name: "Lighting", slug: "lighting" },
+  { id: "7", name: "Decor", slug: "decor" },
 ];
 
-
+export const productColors = [
+  "Natural Oak",
+  "Walnut Brown",
+  "Soft Beige",
+  "Stone Gray",
+  "Off White",
+];
 
 
 export const products = [
@@ -82,6 +95,7 @@ export const products = [
     category: "sofas",
     price: 2499,
     featured: true,
+    color: "Stone Gray",
     rating: 4.9,
     reviews: 128,
     description:
@@ -99,6 +113,7 @@ export const products = [
     category: "chairs",
     price: 899,
     featured: true,
+    color: "Soft Beige",
     rating: 4.8,
     reviews: 74,
     description:
@@ -116,6 +131,7 @@ export const products = [
     category: "tables",
     price: 1899,
     featured: true,
+    color: "Natural Oak",
     rating: 4.9,
     reviews: 92,
     description:
@@ -133,6 +149,7 @@ export const products = [
     category: "chairs",
     price: 749,
     featured: false,
+    color: "Walnut Brown",
     rating: 4.7,
     reviews: 54,
     description:
@@ -150,6 +167,7 @@ export const products = [
     category: "tables",
     price: 599,
     featured: false,
+    color: "Off White",
     rating: 4.8,
     reviews: 63,
     description:
@@ -167,6 +185,7 @@ export const products = [
     category: "storage",
     price: 1399,
     featured: true,
+    color: "Off White",
     rating: 4.9,
     reviews: 41,
     description:
@@ -184,6 +203,7 @@ export const products = [
     category: "sofas",
     price: 3299,
     featured: true,
+    color: "Stone Gray",
     rating: 5.0,
     reviews: 189,
     description:
@@ -201,6 +221,7 @@ export const products = [
     category: "tables",
     price: 1199,
     featured: false,
+    color: "Walnut Brown",
     rating: 4.8,
     reviews: 52,
     description:
@@ -218,6 +239,7 @@ export const products = [
     category: "tables",
     price: 349,
     featured: false,
+    color: "Walnut Brown",
     rating: 4.6,
     reviews: 31,
     description:
@@ -235,6 +257,8 @@ export const products = [
     category: "bedroom",
     price: 2199,
     featured: true,
+    color: "Natural Oak",
+    
     rating: 4.9,
     reviews: 87,
     description:
@@ -252,6 +276,7 @@ export const products = [
     category: "storage",
     price: 1599,
     featured: false,
+    color: "Natural Oak",
     rating: 4.8,
     reviews: 44,
     description:
@@ -269,6 +294,7 @@ export const products = [
     category: "chairs",
     price: 499,
     featured: true,
+    color: "Natural Oak",
     rating: 4.8,
     reviews: 95,
     description:
@@ -285,6 +311,7 @@ export const products = [
   category: "lighting",
   price: 699,
   featured: false,
+  color: "Off White",
   rating: 4.8,
   reviews: 61,
   description: "A sculptural floor lamp crafted from brushed steel and linen.",
@@ -298,6 +325,7 @@ export const products = [
   category: "lighting",
   price: 499,
   featured: false,
+  color: "Soft Beige",
   rating: 4.7,
   reviews: 44,
   description: "Elegant pendant lighting designed for dining spaces.",
@@ -311,6 +339,7 @@ export const products = [
   category: "storage",
   price: 1899,
   featured: true,
+  color: "Walnut Brown",
   rating: 4.9,
   reviews: 84,
   description: "A spacious oak sideboard balancing storage and minimal design.",
@@ -324,6 +353,7 @@ export const products = [
   category: "tables",
   price: 999,
   featured: false,
+  color: "Natural Oak",
   rating: 4.8,
   reviews: 37,
   description: "Slim console table perfect for hallways and entryways.",
@@ -337,6 +367,7 @@ export const products = [
   category: "bedroom",
   price: 549,
   featured: false,
+  color: "Walnut Brown",
   rating: 4.6,
   reviews: 29,
   description: "Compact bedside storage with soft-close drawers.",
@@ -350,6 +381,7 @@ export const products = [
   category: "bedroom",
   price: 1699,
   featured: true,
+  color: "Natural Oak",
   rating: 4.9,
   reviews: 66,
   description: "Clean-lined dresser crafted from natural oak.",
@@ -363,6 +395,7 @@ export const products = [
   category: "chairs",
   price: 699,
   featured: false,
+  color: "Natural Oak",
   rating: 4.7,
   reviews: 33,
   description: "A modern dining bench designed for communal living.",
@@ -376,6 +409,7 @@ export const products = [
   category: "chairs",
   price: 449,
   featured: false,
+  color: "Walnut Brown",
   rating: 4.8,
   reviews: 52,
   description: "Minimalist bar stool with curved oak detailing.",
@@ -389,6 +423,7 @@ export const products = [
   category: "storage",
   price: 1499,
   featured: true,
+  color: "Natural Oak",
   rating: 4.9,
   reviews: 57,
   description: "A media console built to organize modern living spaces.",
@@ -402,6 +437,7 @@ export const products = [
   category: "chairs",
   price: 899,
   featured: true,
+  color: "Off White",
   rating: 4.8,
   reviews: 77,
   description: "Generously padded armchair with premium boucle upholstery.",
@@ -415,6 +451,7 @@ export const products = [
   category: "tables",
   price: 749,
   featured: false,
+  color: "Walnut Brown",
   rating: 4.7,
   reviews: 41,
   description: "Organic coffee table inspired by Scandinavian landscapes.",
@@ -428,6 +465,7 @@ export const products = [
   category: "storage",
   price: 1299,
   featured: false,
+  color: "Natural Oak",
   rating: 4.8,
   reviews: 35,
   description: "Open shelving designed to showcase books and decor.",
@@ -441,6 +479,7 @@ export const products = [
   category: "decor",
   price: 899,
   featured: false,
+  color: "Soft Beige",
   rating: 4.7,
   reviews: 46,
   description: "Handwoven wool rug with subtle texture and warmth.",
@@ -454,6 +493,7 @@ export const products = [
   category: "sofas",
   price: 499,
   featured: false,
+  color: "Soft Beige",
   rating: 4.8,
   reviews: 34,
   description: "Versatile ottoman designed for lounging and flexibility.",
@@ -467,6 +507,7 @@ export const products = [
   category: "lighting",
   price: 299,
   featured: false,
+  color: "Off White",
   rating: 4.6,
   reviews: 22,
   description: "Soft ambient lighting for calm evening interiors.",
@@ -480,6 +521,7 @@ export const products = [
   category: "chairs",
   price: 399,
   featured: false,
+  color: "Soft Beige",
   rating: 4.8,
   reviews: 64,
   description: "Lightweight dining chair with ergonomic support.",
@@ -493,6 +535,7 @@ export const products = [
   category: "tables",
   price: 1399,
   featured: true,
+  color: "Natural Oak",
   rating: 4.9,
   reviews: 58,
   description: "Minimal workstation designed for modern productivity.",
