@@ -6,8 +6,8 @@ import React from 'react'
 
 const Banner = () => {
   return (
-      <section className="bg-gray-100 flex justify-center w-full px-16 py-12 md:py-24">
-        <div className="relative w-full max-w-7xl aspect-[4/3] md:aspect-[22/9] rounded overflow-hidden shadow-sm group">
+      <section className="bg-gray-100 flex justify-center w-full px-4 md:px-16 py-12 md:py-24">
+        <div className="relative w-full max-w-7xl min-h-[400px] sm:min-h-[500px] lg:h-[600px] rounded overflow-hidden shadow-sm group">
           <Image 
             src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=2000&auto=format&fit=crop" 
             alt="Spring Edit Living Room"

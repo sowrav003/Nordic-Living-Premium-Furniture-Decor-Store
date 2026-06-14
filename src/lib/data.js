@@ -1,33 +1,32 @@
 import heroImg from "@/assets/hero_image.jpg";
 import sofa1 from "@/assets/mainSofa.jpg";
-import products01 from "@/assets/products01.jpg";
-import products02 from "@/assets/products02.jpg";
-import products03 from "@/assets/products03.jpg";
-import products04 from "@/assets/products04.jpg";
-import products05 from "@/assets/products05.jpg";
-import products06 from "@/assets/products06.jpg";
-import products07 from "@/assets/products07.jpg";
-import products08 from "@/assets/products08.jpg";
-import products09 from "@/assets/products09.jpg";
-import products10 from "@/assets/products10.jpg";
-import products11 from "@/assets/products11.jpg";
-import products12 from "@/assets/products12.jpg";
-import products13 from "@/assets/products13.jpg";
-import products14 from "@/assets/products14.jpg";
-import products15 from "@/assets/products15.jpg";
-import products16 from "@/assets/products16.jpg";
-import products17 from "@/assets/products17.jpg";
-import products18 from "@/assets/products18.jpg";
-import products19 from "@/assets/products19.jpg";
-import products20 from "@/assets/products20.jpg";
-import products21 from "@/assets/products21.jpg";
-import products22 from "@/assets/products22.jpg";
-import products23 from "@/assets/products23.jpg";
-import products24 from "@/assets/products24.jpg";
-import products25 from "@/assets/products25.jpg";
-import products26 from "@/assets/products26.jpg";
-import products27 from "@/assets/products27.jpg";
-import products28 from "@/assets/products28.jpg";
+import products01 from "@/assets/1.png";
+import products02 from "@/assets/2.png";
+import products03 from "@/assets/3.png";
+import products04 from "@/assets/4.png";
+import products05 from "@/assets/5.png";
+import products06 from "@/assets/6.png";
+import products07 from "@/assets/7.png";
+import products08 from "@/assets/8.png";
+import products09 from "@/assets/9.png";
+import products10 from "@/assets/10.png";
+import products11 from "@/assets/11.png";
+import products12 from "@/assets/12.png";
+import products13 from "@/assets/13.png";
+import products14 from "@/assets/14.png";
+import products15 from "@/assets/15.png";
+import products16 from "@/assets/16.png";
+import products17 from "@/assets/17.png";
+import products18 from "@/assets/18.png";
+import products19 from "@/assets/19.png";
+import products20 from "@/assets/20.png";
+import products21 from "@/assets/21.png";
+import products22 from "@/assets/22.png";
+import products23 from "@/assets/23.png";
+import products24 from "@/assets/24.png";
+import products25 from "@/assets/25.png";
+import products26 from "@/assets/26.png";
+import products27 from "@/assets/27.png";
 import aboutImg from "@/assets/about.jpg";
 import aboutImg2 from "@/assets/aboutImg2.jpg";
 import contactImg from "@/assets/contact.jpg";
@@ -64,7 +63,6 @@ export const assets = {
     products25,
     products26,
     products27,
-    products28,
     aboutImg,
     aboutImg2,
     contactImg
@@ -81,11 +79,11 @@ export const categories = [
 ];
 
 export const productColors = [
-  "Natural Oak",
-  "Walnut Brown",
-  "Soft Beige",
-  "Stone Gray",
-  "Off White",
+  { id: "1", name: "Natural Oak" , colorCode: "#D2B48C"},
+  { id: "2", name: "Walnut Brown" , colorCode: "#8B4513"},
+  { id: "3", name: "Soft Beige" , colorCode: "#F5F5DC"},
+  { id: "4", name: "Stone Gray" , colorCode: "#A9A9A9"},
+  { id: "5", name: "Off White" , colorCode: "#FFFFFF"},
 ];
 
 
@@ -103,8 +101,7 @@ export const products = [
     description:
       "A sculptural three-seat sofa designed with deep cushions and timeless Scandinavian proportions.",
     images: [
-      sofa1,
-      "/src/assets/product-fjord-sofa-2.jpg",
+      products01,
     ],
   },
 
@@ -122,7 +119,7 @@ export const products = [
       "A contemporary lounge chair featuring curved oak arms and premium wool upholstery.",
     images: [
       products25,
-      "/products/nova-chair-2.jpg",
+      products26,
     ],
   },
 
@@ -175,7 +172,7 @@ export const products = [
     description:
       "Minimal circular coffee table with a floating appearance and warm walnut finish.",
     images: [
-      products28,
+      products26,
       "/products/luna-table-2.jpg",
     ],
   },
@@ -530,19 +527,19 @@ export const products = [
   images: [products27],
 },
 
-{
-  id: "29",
-  slug: "hugo-work-desk",
-  name: "Hugo Work Desk",
-  category: "tables",
-  price: 1399,
-  featured: true,
-  color: "Natural Oak",
-  rating: 4.9,
-  reviews: 58,
-  description: "Minimal workstation designed for modern productivity.",
-  images: [products28],
-},
+// {
+//   id: "29",
+//   slug: "hugo-work-desk",
+//   name: "Hugo Work Desk",
+//   category: "tables",
+//   price: 1399,
+//   featured: true,
+//   color: "Natural Oak",
+//   rating: 4.9,
+//   reviews: 58,
+//   description: "Minimal workstation designed for modern productivity.",
+//   images: [products28],
+// },
 
 // {
 //   id: "30",

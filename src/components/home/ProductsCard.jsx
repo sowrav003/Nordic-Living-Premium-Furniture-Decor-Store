@@ -6,7 +6,7 @@ import React from "react";
 const ProductsCard = ({ product }) => {
   return (
     <div className="w-full bg-white rounded">
-      <Link href={`products/${product.slug}`} className="group">
+      <Link href={`/products/${product.slug}`} className="group">
         <div className="relative">
           <Image
             src={product.images[0]}
@@ -14,6 +14,7 @@ const ProductsCard = ({ product }) => {
             width={200}
             height={200}
             className="w-full h-auto object-cover rounded"
+            loading="eager"
             unoptimized
           />
           <div className="absolute top-2 right-2 bg-white rounded-full p-2 ">
