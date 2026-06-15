@@ -46,17 +46,15 @@ const About = () => {
   return (
     <div className="pt-14">
       <div className="bg-stone-100 py-20 px-6">
-
         <Title
           title="Our Story"
           subTitle="Creating timeless furniture inspired by Scandinavian craftsmanship, natural materials, and thoughtful living."
           align="center"
         />
       </div>
-
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div className="relative aspect-[4/5] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 py-24">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center px-6">
+          <div className="relative aspect-square overflow-hidden">
             <Image
               src={assets.aboutImg2}
               alt="Craftsmanship"
@@ -106,9 +104,7 @@ const About = () => {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid grid-cols-2 md:grid-cols-4 border border-stone-200">
+        <div className="grid grid-cols-2 md:grid-cols-4 border border-stone-200 mx-6 my-16">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -122,9 +118,7 @@ const About = () => {
             </div>
           ))}
         </div>
-      </div>
-      {/* Values */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
+
         <div className="text-center mb-16">
           <span className="uppercase text-xs text-stone-500">
             What We Believe
@@ -135,7 +129,7 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 border border-stone-200">
+        <div className="grid md:grid-cols-3 border border-stone-200 mb-16 mx-6">
           {values.map((value, index) => (
             <div
               key={index}
@@ -147,35 +141,33 @@ const About = () => {
             >
               <h3 className="font-serif text-3xl mb-4">{value.title}</h3>
 
-              <p className="text-stone-600 ">
-                {value.description}
-              </p>
+              <p className="text-stone-600 ">{value.description}</p>
             </div>
           ))}
         </div>
-      </div>
 
-      <div className="bg-stone-100 py-24 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <span className="uppercase text-xs text-stone-500">
-            Visit Our Showroom
-          </span>
+        <div className="bg-stone-100 py-24 px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="uppercase text-xs text-stone-500">
+              Visit Our Showroom
+            </span>
 
-          <h2 className="font-serif text-4xl md:text-5xl mt-4 mb-6">
-            Experience Nordic Living in person.
-          </h2>
+            <h2 className="font-serif text-4xl md:text-5xl mt-4 mb-6">
+              Experience Nordic Living in person.
+            </h2>
 
-          <p className="text-stone-600 mb-10">
-            Discover our collections, explore materials up close, and receive
-            personalized guidance from our design specialists.
-          </p>
+            <p className="text-stone-600 mb-10">
+              Discover our collections, explore materials up close, and receive
+              personalized guidance from our design specialists.
+            </p>
 
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center bg-stone-900 text-white px-8 py-4 uppercase text-xs font-medium hover:bg-stone-800 transition-colors"
-          >
-            Contact Us
-          </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center bg-stone-900 text-white px-8 py-4 uppercase text-xs font-medium hover:bg-stone-800 transition-colors"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
 "use client";
 
+
 import { cn } from "@/lib/utils";
+import { useShopStore } from "@/store/useShopStore";
 import { Heart, Menu, Search, ShoppingBag, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,11 +16,11 @@ const Navbar = () => {
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
-
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const isActive = (href) => pathname === href;
+const { cartItems } = useShopStore();
 
   useEffect(() => {
     if (pathname !== "/") {
@@ -38,6 +40,13 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [pathname]);
+
+const cartCount =
+  cartItems.reduce(
+    (total, item) =>
+      total + item.quantity,
+    0
+  );
 
   return (
     <>
@@ -123,17 +132,24 @@ const Navbar = () => {
               </Link>
 
               <Link
-                href="/cart"
-                className={cn(
-                  " transition-colors ",
-                  isScrolled
-                    ? "text-stone-900 hover:text-stone-500"
-                    : "text-white hover:text-stone-300",
-                )}
-              >
-                <ShoppingBag className="w-5 h-5" />
-                <span className="sr-only">Cart</span>
-              </Link>
+  href="/cart"
+  className={cn(
+    "relative transition-colors",
+    isScrolled
+      ? "text-stone-900 hover:text-stone-500"
+      : "text-white hover:text-stone-300",
+  )}
+>
+  <ShoppingBag className="w-5 h-5" />
+
+  {cartCount > 0 && (
+    <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-black text-white text-[10px] flex items-center justify-center">
+      {cartCount}
+    </span>
+  )}
+
+  <span className="sr-only">Cart</span>
+</Link>
             </div>
           </div>
         </div>

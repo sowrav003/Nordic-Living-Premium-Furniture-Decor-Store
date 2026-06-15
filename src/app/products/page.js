@@ -78,13 +78,14 @@ const ProductsPage = () => {
   }
 
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="pt-14 pb-8">
+      <div className="bg-stone-100 py-20 px-6">
         <Title
           title="Our Products"
           subTitle="Discover our wide range of high-quality products, carefully crafted to meet your needs and elevate your lifestyle."
         />
-
+      </div>
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-[280px_1fr] gap-10 mt-10">
           <aside className="space-y-10">
             <div>
