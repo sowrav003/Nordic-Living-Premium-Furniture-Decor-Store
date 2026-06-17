@@ -1,6 +1,5 @@
 "use client";
 
-
 import { cn } from "@/lib/utils";
 import { useShopStore } from "@/store/useShopStore";
 import { Heart, Menu, Search, ShoppingBag, X } from "lucide-react";
@@ -19,8 +18,9 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isActive = (href) => pathname === href;
-const { cartItems } = useShopStore();
+  const isActive = (href) =>
+    pathname === href || (href !== "/" && pathname.startsWith(href));
+  const { cartItems, wishlistItems } = useShopStore();
 
   useEffect(() => {
     if (pathname !== "/") {
@@ -41,12 +41,7 @@ const { cartItems } = useShopStore();
     };
   }, [pathname]);
 
-const cartCount =
-  cartItems.reduce(
-    (total, item) =>
-      total + item.quantity,
-    0
-  );
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <>
@@ -67,7 +62,6 @@ const cartCount =
               <Menu className="w-6 h-6" />
             </button>
 
-
             <Link
               href="/"
               className={cn(
@@ -78,7 +72,6 @@ const cartCount =
               NØRDIC
             </Link>
 
-
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <Link
@@ -87,9 +80,11 @@ const cartCount =
                   className={cn(
                     "text-sm uppercase tracking-wider font-medium transition-colors relative group",
                     isActive(link.href)
-                      ? "text-stone-900"
+                      ? isScrolled
+                        ? "text-stone-900"
+                        : "text-white"
                       : isScrolled
-                        ? "text-stone-900 hover:text-stone-500"
+                        ? "text-stone-700 hover:text-stone-500 transition-colors"
                         : "text-white hover:text-stone-300",
                   )}
                 >
@@ -97,6 +92,8 @@ const cartCount =
                   <span
                     className={cn(
                       "absolute -bottom-1 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full",
+                      isActive(link.href) ? "w-full" : "w-0 group-hover:w-full",
+
                       isScrolled ? "bg-stone-900" : "bg-white",
                     )}
                   ></span>
@@ -104,7 +101,6 @@ const cartCount =
               ))}
             </nav>
 
-            {/* Actions */}
             <div className="flex items-center gap-5">
               <button
                 className={cn(
@@ -121,35 +117,39 @@ const cartCount =
               <Link
                 href="/wishlist"
                 className={cn(
-                  " transition-colors hidden sm:block",
+                  "relative transition-colors hidden sm:block",
                   isScrolled
                     ? "text-stone-900 hover:text-stone-500"
                     : "text-white hover:text-stone-300",
                 )}
               >
                 <Heart className="w-5 h-5" />
+                {wishlistItems.length > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5  w-2 h-2 rounded-full bg-black" />
+                )}
+
                 <span className="sr-only">Wishlist</span>
               </Link>
 
               <Link
-  href="/cart"
-  className={cn(
-    "relative transition-colors",
-    isScrolled
-      ? "text-stone-900 hover:text-stone-500"
-      : "text-white hover:text-stone-300",
-  )}
->
-  <ShoppingBag className="w-5 h-5" />
+                href="/cart"
+                className={cn(
+                  "relative transition-colors",
+                  isScrolled
+                    ? "text-stone-900 hover:text-stone-500"
+                    : "text-white hover:text-stone-300",
+                )}
+              >
+                <ShoppingBag className="w-5 h-5" />
 
-  {cartCount > 0 && (
-    <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-black text-white text-[10px] flex items-center justify-center">
-      {cartCount}
-    </span>
-  )}
+                {cartCount > 0 && (
+                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-black text-white text-[10px] flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
 
-  <span className="sr-only">Cart</span>
-</Link>
+                <span className="sr-only">Cart</span>
+              </Link>
             </div>
           </div>
         </div>

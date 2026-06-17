@@ -68,7 +68,7 @@ const ProductDetails = ({ params }) => {
               >
                 <Image
                   src={img}
-                  alt=""
+                  alt={product.name}
                   fill
                   className="object-cover"
                   unoptimized
@@ -101,7 +101,7 @@ const ProductDetails = ({ params }) => {
                 >
                   <Image
                     src={img}
-                    alt=""
+                    alt={product.name}
                     width={150}
                     height={150}
                     className="w-full"
@@ -221,7 +221,7 @@ const ProductDetails = ({ params }) => {
 
           {activeTab === "materials" && (
             <div className="space-y-2 text-stone-600">
-              <p>Solid Oak</p>
+              <p>Color: {product.color}</p>
               <p>Premium Linen</p>
               <p>Handcrafted Finish</p>
             </div>
@@ -236,18 +236,18 @@ const ProductDetails = ({ params }) => {
           )}
         </section>
 
-        {/* Related Products */}
+
         <section className="py-24">
           <h2 className="font-serif text-4xl mb-10">You May Also Like</h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {relatedProducts.length > 0 ? (<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {relatedProducts.map((item) => (
               <ProductsCard key={item.id} product={item} />
             ))}
-          </div>
+          </div>) : (<p className="text-stone-600">No related products found.</p>
+          )}
         </section>
 
-        {/* CTA */}
       </div>
     </div>
   );

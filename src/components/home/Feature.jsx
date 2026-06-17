@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import Title from './Title'
 import Image from 'next/image'
-import { products } from '@/lib/data'
+import { assets, products } from '@/lib/data'
 
 const Feature = () => {
   return (
@@ -18,18 +18,16 @@ const Feature = () => {
           </div>
 
           
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div className="grid lg:grid-cols-[1fr_1fr] gap-6">
   
-  {/* Large Card */}
   <Link
-    href={`/products/${products[0].slug}`}
-    className="relative col-span-2 md:row-span-2 overflow-hidden group"
+    href='/products'
+    className="relative min-h-[400px] overflow-hidden group"
   >
     <Image
-      src={products[0].images[0]}
-      alt={products[0].name}
-      width={600}
-      height={400}
+      src={assets.sofa1}
+      alt="Sofas & Sectionals"
+      fill
       className="object-cover transition-transform duration-700 group-hover:scale-105"
       unoptimized
     />
@@ -48,29 +46,30 @@ const Feature = () => {
     </div>
   </Link>
 
-  {/* Small Cards */}
-  {products.slice(1, 5).map((product) => (
+<div className='grid grid-cols-2 gap-6'>
+    {products.slice(1, 5).map((product) => (
     <Link
       key={product.id}
       href={`/products/${product.slug}`}
-      className="relative h-[260px] w-full overflow-hidden group"
+      className="relative h-[300px] w-full overflow-hidden group "
     >
       <Image
         src={product.images[0]}
         alt={product.name}
         fill
-        className="object-cover object-scale-down transition-transform duration-700 group-hover:scale-105"
+        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
       />
 
       <div className="absolute inset-0 bg-black/25 group-hover:bg-black/35 transition-colors" />
 
-      <div className="absolute bottom-5 left-5">
-        <h3 className="text-white text-lg font-medium">
+      <div className="absolute bottom-6 left-6">
+        <h3 className="text-white text-xl font-serif">
           {product.name}
         </h3>
       </div>
     </Link>
   ))}
+</div>
 </div>
       </section>
   )

@@ -1,6 +1,8 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
-export const useShopStore = create((set) => ({
+export const useShopStore = create(persist((set) => ({
+  
   cartItems: [],
   wishlistItems: [],
 
@@ -106,4 +108,4 @@ export const useShopStore = create((set) => ({
         ],
       };
     }),
-}));
+})));
